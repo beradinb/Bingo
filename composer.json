@@ -1,6 +1,7 @@
 {
     "name": "beradinb/bingo-module",
     "description": "bingo module",
+    "type": "laravel-module",
     "extra": {
         "laravel": {
             "providers": [
