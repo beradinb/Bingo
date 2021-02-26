@@ -1,0 +1,19 @@
+{
+    "name": "beradinb/bingo",
+    "description": "bingo module",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Bingo\\Providers\\BingoServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Bingo\\": ""
+        }
+    }
+}

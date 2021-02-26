@@ -1,0 +1,13 @@
+{
+    "name": "Bingo",
+    "alias": "bingo",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Bingo\\Providers\\BingoServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
