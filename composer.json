@@ -1,5 +1,5 @@
 {
-    "name": "beradinb/bingo",
+    "name": "beradinb/bingo-module",
     "description": "bingo module",
     "extra": {
         "laravel": {
