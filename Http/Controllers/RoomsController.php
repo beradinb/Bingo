@@ -257,19 +257,19 @@ class RoomsController extends Controller
     }
 
     /**
-     * Update Bingo Rooms and their Categories based on the 888 API url 
+     * Update Bingo Rooms and their Categories based on the 888 API url
      */
     public function update_bingo_api ()
     {
-        $skin_id = $this->skinId;
-
-        $response = Http::get("https://external-api-unicorn.bingosys.net/bingo-lobby?skinId=$skin_id");
-        $data = $response->json();
-        // dd($data);
-        $rooms = $data['data']['rooms'];
-        $categories= $data['data']['categories'];
 
         try {
+
+            $skin_id = $this->skinId;
+            $response = Http::get("https://external-api-unicorn.bingosys.net/bingo-lobby?skinId=$skin_id");
+            $data = $response->json();
+            $rooms = $data['data']['rooms'];
+            $categories= $data['data']['categories'];
+
             foreach($rooms as $r){
 
                 switch ($r['cardType']) {
@@ -323,8 +323,10 @@ class RoomsController extends Controller
                         }
                     }
             }
+            Flash::success('<i class="fas fa-check"></i> Bingo Rooms Updated Successfully!')->important();
         } catch (\Throwable $th) {
-            echo($th->getMessage());
+            // echo($th->getMessage());
+            Flash::error('<i class="fas fa-times"></i> Update Failed! Error: '.$th->getMessage())->important();
         }
         return redirect()->back();
     }
